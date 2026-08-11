@@ -1,11 +1,493 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Wash</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aguazul Car Wash — Detailing Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="34" height="34">
+            <path d="M4 24c2-9 8-14 16-14s14 5 16 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="12" cy="27" r="3.4" fill="currentColor"/>
+            <circle cx="28" cy="27" r="3.4" fill="currentColor"/>
+            <path d="M6 24h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">AGUAZUL<span class="brand-dot">.</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#reservar" class="nav-cta">Reservar turno</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <svg class="hero-car" viewBox="0 0 900 420" preserveAspectRatio="xMidYMax meet">
+          <ellipse cx="450" cy="368" rx="360" ry="26" class="hero-shadow"/>
+          <path class="hero-car-body" d="M120 300 C130 230 190 190 260 185 L330 150 C365 130 470 128 520 148 L610 188 C680 195 740 235 760 300 Z"/>
+          <path class="hero-car-glass" d="M345 185 L375 155 C400 140 465 139 495 155 L535 190 Z"/>
+          <circle class="hero-wheel" cx="255" cy="305" r="46"/>
+          <circle class="hero-wheel-rim" cx="255" cy="305" r="19"/>
+          <circle class="hero-wheel" cx="605" cy="305" r="46"/>
+          <circle class="hero-wheel-rim" cx="605" cy="305" r="19"/>
+          <g class="hero-shine">
+            <line x1="200" y1="230" x2="700" y2="230"/>
+          </g>
+        </svg>
+        <div class="hero-drops" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Lavadero &amp; Detailing</p>
+        <h1>TU AUTO,<br><span>COMO NUEVO.</span></h1>
+        <p class="hero-sub">Devolvemos el brillo que tu auto merece.</p>
+        <a href="#reservar" class="btn btn-primary btn-lg">
+          Reservar turno
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="wipe-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== FORMULARIO DEL CLIENTE ===================== -->
+    <section id="reservar" class="section section-light">
+      <div class="container">
+        <p class="eyebrow eyebrow-dark">Paso 1 · Tus datos</p>
+        <h2 class="section-title">Reservá tu turno</h2>
+        <p class="section-lead">Contanos quién sos para poder confirmar tu turno de lavado.</p>
+
+        <form class="card-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="nombre">Nombre y apellido</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: Martina Gómez" required>
+            </div>
+            <div class="field">
+              <label for="telefono">Número de teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 11 2345 6789" required>
+            </div>
+            <div class="field field-wide">
+              <label for="patente-cliente">Patente</label>
+              <input type="text" id="patente-cliente" name="patente" placeholder="Ej: AB 123 CD" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== DATOS DEL VEHÍCULO ===================== -->
+    <section id="vehiculo" class="section section-panel">
+      <div class="container">
+        <p class="eyebrow">Paso 2 · Tu vehículo</p>
+        <h2 class="section-title section-title-onpanel">Datos del vehículo</h2>
+        <p class="section-lead section-lead-onpanel">Así preparamos los productos adecuados para tu auto.</p>
+
+        <form class="card-form card-form-dark" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="patente">Patente</label>
+              <input type="text" id="patente" name="patente" placeholder="Ej: AB 123 CD" required>
+            </div>
+            <div class="field">
+              <label for="marca">Marca</label>
+              <input type="text" id="marca" name="marca" placeholder="Ej: Volkswagen" required>
+            </div>
+            <div class="field">
+              <label for="modelo">Modelo</label>
+              <input type="text" id="modelo" name="modelo" placeholder="Ej: Vento" required>
+            </div>
+            <div class="field">
+              <label for="anio">Año</label>
+              <input type="number" id="anio" name="anio" placeholder="Ej: 2021" min="1950" max="2030">
+            </div>
+            <div class="field">
+              <label for="color">Color</label>
+              <input type="text" id="color" name="color" placeholder="Ej: Gris plata">
+            </div>
+            <div class="field">
+              <label for="tipo-vehiculo">Tipo de vehículo</label>
+              <select id="tipo-vehiculo" name="tipo-vehiculo">
+                <option value="auto">Auto</option>
+                <option value="camioneta">Camioneta</option>
+                <option value="suv">SUV</option>
+                <option value="utilitario">Utilitario</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICIOS ===================== -->
+    <section id="servicios" class="section section-light">
+      <div class="container">
+        <p class="eyebrow eyebrow-dark">Lo que hacemos</p>
+        <h2 class="section-title">Nuestros servicios</h2>
+        <p class="section-lead">Elegí el mimo que tu auto necesita, de exterior rápido a detailing completo.</p>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-thumb thumb-exterior" aria-hidden="true"><span class="thumb-icon">◐</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Lavado exterior</h3>
+                <span class="price">$9.500</span>
+              </div>
+              <p>Carrocería, llantas y vidrios impecables en minutos.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-interior" aria-hidden="true"><span class="thumb-icon">▤</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Lavado interior</h3>
+                <span class="price">$10.200</span>
+              </div>
+              <p>Aspirado profundo, tablero y detalles al detalle.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card service-card-featured">
+            <div class="service-thumb thumb-completo" aria-hidden="true"><span class="thumb-icon">✦</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Lavado completo</h3>
+                <span class="price">$16.800</span>
+              </div>
+              <p>Exterior + interior. Nuestro favorito de los clientes.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-motor" aria-hidden="true"><span class="thumb-icon">⚙</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Lavado de motor</h3>
+                <span class="price">$8.900</span>
+              </div>
+              <p>Desengrasado seguro para partes sensibles.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-profunda" aria-hidden="true"><span class="thumb-icon">◈</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Limpieza profunda</h3>
+                <span class="price">$18.500</span>
+              </div>
+              <p>Tratamiento intensivo para autos muy sucios.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-tapizados" aria-hidden="true"><span class="thumb-icon">▦</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Limpieza de tapizados</h3>
+                <span class="price">$14.300</span>
+              </div>
+              <p>Butacas y alfombras como recién salidas de fábrica.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-pulido" aria-hidden="true"><span class="thumb-icon">◍</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Pulido</h3>
+                <span class="price">$22.000</span>
+              </div>
+              <p>Elimina rayas finas y devuelve la profundidad del color.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-encerado" aria-hidden="true"><span class="thumb-icon">◉</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Encerado</h3>
+                <span class="price">$12.700</span>
+              </div>
+              <p>Capa protectora que realza el brillo y repele el agua.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-detailing" aria-hidden="true"><span class="thumb-icon">✧</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Detailing</h3>
+                <span class="price">$29.900</span>
+              </div>
+              <p>Restauración estética integral, adentro y afuera.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-thumb thumb-camioneta" aria-hidden="true"><span class="thumb-icon">▣</span></div>
+            <div class="service-body">
+              <div class="service-head">
+                <h3>Lavado de camioneta</h3>
+                <span class="price">$19.400</span>
+              </div>
+              <p>Pensado para el mayor porte y la doble tracción.</p>
+              <a href="#detalle" class="btn btn-ghost">Ver servicio</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DETALLE DE SERVICIO ===================== -->
+    <section id="detalle" class="section section-panel">
+      <div class="container detail-layout">
+
+        <div class="detail-media" aria-hidden="true">
+          <div class="detail-media-inner">
+            <span class="detail-icon">✦</span>
+          </div>
+        </div>
+
+        <div class="detail-info">
+          <p class="eyebrow">Servicio destacado</p>
+          <h2 class="detail-title">Lavado completo</h2>
+          <p class="detail-price"><span>$16.800</span></p>
+          <p class="detail-desc">El equilibrio perfecto entre exterior e interior. Ideal para el uso diario y para mantener tu auto impecable semana a semana.</p>
+
+          <div class="detail-cols">
+            <div>
+              <h4>Incluye</h4>
+              <ul class="check-list">
+                <li>Lavado exterior</li>
+                <li>Limpieza de llantas</li>
+                <li>Limpieza de vidrios</li>
+                <li>Aspirado interior</li>
+                <li>Limpieza de tablero</li>
+                <li>Limpieza de alfombras</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Zonas tratadas</h4>
+              <ul class="check-list">
+                <li>Carrocería y llantas</li>
+                <li>Vidrios y espejos</li>
+                <li>Habitáculo y tablero</li>
+                <li>Pisos y alfombras</li>
+              </ul>
+              <h4 class="duration-label">Duración aproximada</h4>
+              <p class="duration">45 – 60 minutos</p>
+            </div>
+          </div>
+
+          <a href="#turno" class="btn btn-primary">Reservar este servicio</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== ELEGÍ TU TURNO ===================== -->
+    <section id="turno" class="section section-light">
+      <div class="container">
+        <p class="eyebrow eyebrow-dark">Paso 3 · Agenda</p>
+        <h2 class="section-title">Elegí tu turno</h2>
+        <p class="section-lead">Seleccioná el día, el horario y el servicio para tu lavado.</p>
+
+        <form class="card-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha">
+            </div>
+            <div class="field">
+              <label for="hora">Hora</label>
+              <select id="hora" name="hora">
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+              </select>
+            </div>
+            <div class="field field-wide">
+              <label for="servicio-elegido">Servicio seleccionado</label>
+              <select id="servicio-elegido" name="servicio">
+                <option>Lavado exterior</option>
+                <option>Lavado interior</option>
+                <option selected>Lavado completo</option>
+                <option>Lavado de motor</option>
+                <option>Limpieza profunda</option>
+                <option>Limpieza de tapizados</option>
+                <option>Pulido</option>
+                <option>Encerado</option>
+                <option>Detailing</option>
+                <option>Lavado de camioneta</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="slots">
+            <p class="slots-label">Horarios disponibles hoy</p>
+            <div class="slots-grid">
+              <span class="slot">09:00</span>
+              <span class="slot">10:00</span>
+              <span class="slot slot-taken">11:00</span>
+              <span class="slot">12:00</span>
+              <span class="slot">14:00</span>
+              <span class="slot slot-taken">15:00</span>
+              <span class="slot">16:00</span>
+              <span class="slot">17:00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== CONFIRMACIÓN ===================== -->
+    <section id="confirmacion" class="section section-panel">
+      <div class="container">
+        <p class="eyebrow">Último paso</p>
+        <h2 class="section-title section-title-onpanel">Confirmá tu turno</h2>
+        <p class="section-lead section-lead-onpanel">Revisá que todo esté correcto antes de confirmar.</p>
+
+        <div class="summary-card">
+          <dl class="summary-list">
+            <div class="summary-row">
+              <dt>Cliente</dt>
+              <dd>Martina Gómez</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Teléfono</dt>
+              <dd>11 2345 6789</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Vehículo</dt>
+              <dd>Volkswagen Vento</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Patente</dt>
+              <dd>AB 123 CD</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Servicio</dt>
+              <dd>Lavado completo</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Fecha</dt>
+              <dd>18/08/2026</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Hora</dt>
+              <dd>10:00</dd>
+            </div>
+            <div class="summary-row summary-row-total">
+              <dt>Precio</dt>
+              <dd>$16.800</dd>
+            </div>
+          </dl>
+
+          <div class="summary-actions">
+            <button type="button" class="btn btn-primary">Confirmar turno</button>
+            <button type="button" class="btn btn-outline">Modificar datos</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contacto" class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <span class="brand brand-footer">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="30" height="30">
+              <path d="M4 24c2-9 8-14 16-14s14 5 16 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="12" cy="27" r="3.4" fill="currentColor"/>
+              <circle cx="28" cy="27" r="3.4" fill="currentColor"/>
+              <path d="M6 24h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">AGUAZUL<span class="brand-dot">.</span></span>
+        </span>
+        <p>Lavadero y detailing de autos. Cuidamos tu vehículo como si fuera nuestro.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <p>Av. Rivadavia 4820, CABA</p>
+        <p>+54 9 11 2345 6789</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Horarios</h5>
+        <p>Lunes a Viernes: 9:00 – 18:00</p>
+        <p>Sábados: 9:00 – 14:00</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Seguinos</h5>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Aguazul Car Wash. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
